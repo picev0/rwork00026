@@ -3,6 +3,7 @@ package com.example.rworksample00026.model.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.rworksample00026.model.entity.RequestDocumentsPersonInfo
+import com.example.rworksample00026.model.entity.User
 
 @Dao
 interface RequestDocumentsPersonInfoDao {
@@ -25,5 +26,13 @@ interface RequestDocumentsPersonInfoDao {
     // 削除メソッド
     @Delete
     fun deleteRequestDocumentsPersonInfo(requestDocumentsPersonInfo: RequestDocumentsPersonInfo)
+
+    //Test
+    @Insert
+    fun insertAll(vararg requestDocumentsPersonInfo: RequestDocumentsPersonInfo )
+
+    @Query("SELECT * FROM request_documents_person_info WHERE name = :name")
+    fun findByName(name: String): List<RequestDocumentsPersonInfo>
+
 
 }

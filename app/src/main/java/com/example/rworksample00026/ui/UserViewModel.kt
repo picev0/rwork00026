@@ -14,8 +14,10 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
     private val userDao: UserDao
 
     init {
-        val db = RworkDatabase.buildDatabase(application)
-        userDao = db.userDao()
+
+            val db = RworkDatabase.buildDatabase(application)
+            userDao = db.userDao()
+
     }
 
     val emailList = userDao.loadUser()

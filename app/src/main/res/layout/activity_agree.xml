@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgreeActivity">
+    tools:context=".ui.AgreeActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:id="@+id/privacytheme"
-        android:text="プライバシーポリシー\nの同意について"
+        android:text="プライバシーポリシーの同意について"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         android:layout_marginBottom="50dp"/>
     <!-- プライバシーポリシー同意の文面は\nで改行しているため将来的に動的になるよう改善の余地あり -->
     <TextView
-        android:id="@+id/stmt"
+        android:id="@+id/privacystmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/flame_style"
@@ -37,12 +37,12 @@
         app:layout_constraintVertical_bias="0.5"
         android:layout_marginBottom="100dp"/>
     <Button
-        android:text="プライバシーポリシーを確認する"
+        android:text="プライバシーポリシー"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/gotobrowse"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stmt"
+        app:layout_constraintTop_toBottomOf="@+id/privacystmt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintVertical_bias="0.6"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gotobrowse"/>
+        app:layout_constraintTop_toBottomOf="@+id/privacystmt"/>
 
 
 

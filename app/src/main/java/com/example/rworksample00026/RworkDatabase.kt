@@ -13,18 +13,33 @@ import net.sqlcipher.database.SupportFactory
 abstract class RworkDatabase : RoomDatabase() {
     abstract fun experiencePersonInfoDao(): ExperiencePersonInfoDao
     abstract fun requestDocumentsPersonInfoDao(): RequestDocumentsPersonInfoDao
-    abstract fun reportsDao(): DailyReportsDao
+    abstract fun dailyReportsDao(): DailyReportsDao
     abstract fun userDao(): UserDao
 
     companion object {
+
+        var TEST_MODE = false
+        private val databaseName = "database_name"
+        private var db: RworkDatabase? = null
+
+
         fun buildDatabase(context: Context): RworkDatabase {
-            return Room.databaseBuilder(
-                context,
-                RworkDatabase::class.java,
-                "rwork.db"
-            ).openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("hworldrwork".toCharArray())))
-                .allowMainThreadQueries()
-                .build()
+
+            if (db == null) {
+                if (TEST_MODE) {
+                    db = Room.inMemoryDatabaseBuilder(context, RworkDatabase::class.java).openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("hworldrwork".toCharArray()))).allowMainThreadQueries().build()
+
+                }
+                else {
+                    db = Room.databaseBuilder(context, RworkDatabase::class.java, "rwork.db").openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("hworldrwork".toCharArray()))).allowMainThreadQueries().build()
+                }
+            }
+
+            return db!!
+        }
+
+        private fun close(){
+            db?.close()
         }
     }
 }

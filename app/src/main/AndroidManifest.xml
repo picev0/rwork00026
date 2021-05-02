@@ -2,14 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rworksample00026">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".RworkApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RworkSample00026">
-        <activity android:name=".ui.AttendantActivity"></activity>
+        <activity android:name=".ui.beginner.ResultActivity"></activity>
+        <activity android:name=".ui.beginner.CatchtheBallActivity" />
+        <activity android:name=".ui.beginner.StartActivity" />
+        <activity android:name=".ui.beginner.BeginnerActivity" />
+        <activity android:name=".ui.experience.ExperienceFormSecondActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsSendConfirmActivity" />
+        <activity android:name=".ui.DatabaseManagementActivity" />
+        <activity android:name=".ui.AppManagementActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsConfirmActivity" />
+        <activity android:name=".ui.dailyreports.SentDailyReportsListActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsAdminActivity" />
+        <activity android:name=".ui.AttendantActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsFormThirdActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsFormSecondActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsFormFirstActivity" />
@@ -27,17 +42,21 @@
         <activity android:name=".ui.requestdocuments.RequestDocumentsFormSecondActivity" />
         <activity android:name=".ui.requestdocuments.RequestDocumentsFormFirstActivity" />
         <activity android:name=".ui.AuthActivity" />
-        <activity android:name=".AgreeActivity" />
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".FirstActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.AgreeActivity" />
+        <activity android:name=".ui.ThirdActivity" />
+        <activity android:name=".ui.SecondActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="PASSWORD"
+            android:value="" />
     </application>
 
 </manifest>

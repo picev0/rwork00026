@@ -16,11 +16,12 @@ class RequestDocumentsConfirmActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_request_documents_confirm)
+        binding = ActivityRequestDocumentsConfirmBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val list = viewModel.personData
         val str = StringBuilder()
-        for (i in 0..list.count()-1){
+        for (i in 0 until list.count()){
             str.append("お名前：　")
             str.append(list.map{it.name}[i].toString())
             str.append("\n")

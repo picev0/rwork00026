@@ -60,7 +60,7 @@
             android:hint="お名前"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/impressions"/>
+            app:layout_constraintTop_toBottomOf="@+id/motion"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTheme"/>
+            app:layout_constraintTop_toBottomOf="@+id/impressions"/>
 
         <EditText
             android:layout_width="wrap_content"

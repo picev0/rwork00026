@@ -1,6 +1,7 @@
 package com.example.rworksample00026
 
 import android.widget.TextView
+import com.example.rworksample00026.ui.SecondActivity
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,11 +1,11 @@
-package com.example.rworksample00026
+package com.example.rworksample00026.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.rworksample00026.StaffActivity
 import com.example.rworksample00026.databinding.ActivityMainBinding
-import com.example.rworksample00026.ui.AuthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +20,14 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(v: View?) {
                 val intent = Intent(this@MainActivity, AgreeActivity::class.java)
                 intent.putExtra("stmt", "資料請求")
+                startActivity(intent)
+            }
+        })
+
+        binding.experienceBtn.setOnClickListener(object: View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val intent = Intent(this@MainActivity, AgreeActivity::class.java)
+                intent.putExtra("stmt", "相談する")
                 startActivity(intent)
             }
         })

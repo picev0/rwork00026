@@ -28,16 +28,16 @@ class ExperienceViewModel(application: Application): AndroidViewModel(applicatio
     //val count = requestDocumentsPersonInfoDao.recordsCount()
 
 
-    fun insert(name: String, phoneticGuides: String, birthday: String, mailAddress: String, phoneNumber: String) {
+    fun insert(applicationForm: String, name: String, phoneticGuides: String, birthday: String, phoneNumber: String) {
         viewModelScope.launch(Dispatchers.IO) {
             experiencePersonInfoDao.saveExperiencePersonInfo(
                 ExperiencePersonInfo(
                     id = 0,
                     name = name,
-                    applicationForm = "",
+                    applicationForm = applicationForm,
                     phoneticGuides = phoneticGuides,
                     birthday = birthday,
-                    mailAddress = mailAddress,
+                    mailAddress = "",
                     phoneNumber = phoneNumber,
                     zipStr = "",
                     prefecture = "",

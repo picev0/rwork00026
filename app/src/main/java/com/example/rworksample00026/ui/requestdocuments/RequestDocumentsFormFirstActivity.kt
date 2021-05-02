@@ -26,7 +26,7 @@ import java.util.*
 class RequestDocumentsFormFirstActivity : ScopedAppActivity(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var binding : ActivityRequestDocumentsFormFirstBinding
-    private val viewModel: RequestDocumentsViewModel by viewModels()
+    val viewModel: RequestDocumentsViewModel by viewModels()
     private val userViewModel: UserViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

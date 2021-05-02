@@ -13,7 +13,13 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveUser(vararg user: User)
 
+    @Insert
+    fun insertAll(vararg user: User)
+
     @Delete
     fun deleteUser(user : User)
+
+    @Query("SELECT * FROM user WHERE name = :name")
+    fun findByName(name: String): List<User>
 
 }

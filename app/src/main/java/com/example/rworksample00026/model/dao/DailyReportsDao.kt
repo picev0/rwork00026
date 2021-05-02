@@ -3,6 +3,7 @@ package com.example.rworksample00026.model.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.rworksample00026.model.entity.DailyReports
+import com.example.rworksample00026.model.entity.User
 
 @Dao
 interface DailyReportsDao {
@@ -25,4 +26,12 @@ interface DailyReportsDao {
     // 削除メソッド
     @Delete
     fun delete(dailyReports: DailyReports)
+
+    // Test
+    @Insert
+    fun insertAll(vararg dailyReports: DailyReports )
+
+    @Query("SELECT * FROM daily_reports WHERE name = :name")
+    fun findByName(name: String): List<DailyReports>
+
 }

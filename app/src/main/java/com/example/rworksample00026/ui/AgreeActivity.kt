@@ -1,4 +1,4 @@
-package com.example.rworksample00026
+package com.example.rworksample00026.ui
 
 import android.content.Intent
 import android.net.Uri

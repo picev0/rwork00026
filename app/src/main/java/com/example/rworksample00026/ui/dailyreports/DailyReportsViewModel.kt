@@ -2,6 +2,7 @@ package com.example.rworksample00026.ui.dailyreports
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rworksample00026.RworkDatabase
 import com.example.rworksample00026.model.dao.DailyReportsDao
@@ -9,12 +10,12 @@ import com.example.rworksample00026.model.entity.DailyReports
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class DailyReportsViewModel(application: Application) :AndroidViewModel(application){
+class DailyReportsViewModel(application: Application) : AndroidViewModel(application){
     private val reportsDao: DailyReportsDao
 
     init {
         val db = RworkDatabase.buildDatabase(application)
-        reportsDao = db.reportsDao()
+        reportsDao = db.dailyReportsDao()
     }
 
     val reportsData = reportsDao.loadAllReports()
