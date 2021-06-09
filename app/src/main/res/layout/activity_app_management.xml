@@ -4,7 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppManagementActivity">
+    tools:context=".ui.AppManagementActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#FA817D"
+        android:id="@+id/tool_bar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/textView"
@@ -12,15 +30,19 @@
         android:layout_height="wrap_content"
         android:text="アプリ管理"
         android:textSize="30sp"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.5"/>
 
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        app:bootstrapBrand="danger"
+        app:roundedCorners="true"
+        app:bootstrapSize="xl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:textSize="30sp"
         android:text="DB管理"
         android:id="@+id/detabaseManagement"

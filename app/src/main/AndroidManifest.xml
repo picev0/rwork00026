@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.rworksample00026">
 
+    <queries>
+        <package android:name="com.deploygate" />
+    </queries>
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+ <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" /> リリース時には消すこと
+    -->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:name=".RworkApplication"
@@ -13,12 +25,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RworkSample00026">
-        <activity android:name=".ui.beginner.ResultActivity"></activity>
+        <activity android:name=".ui.UserDatabaseRecordDeleteResultActivity"></activity>
+        <activity android:name=".ui.UserDatabaseRecordDeleteConfirmActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsRecordDeleteResultActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsRecordDeleteConfirmActivity" />
+        <activity android:name=".ui.UserDatabaseAdminActivity" />
+        <activity android:name=".ui.dailyreports.SentDailyReportsDetailActivity" />
+        <activity android:name=".ui.experience.ExperienceFormFourthActivity" />
+        <activity android:name=".ui.experience.ExperienceRecordDeleteConfirmActivity" />
+        <activity android:name=".ui.experience.ExperienceRecordDeleteResultActivity" />
+        <activity android:name=".ui.beginner.ResultActivity" />
         <activity android:name=".ui.beginner.CatchtheBallActivity" />
         <activity android:name=".ui.beginner.StartActivity" />
         <activity android:name=".ui.beginner.BeginnerActivity" />
+        <activity android:name=".ui.experience.ExperienceFormFixActivity" />
+        <activity android:name=".ui.experience.ExperienceSendConfirmActivity" />
+        <activity android:name=".ui.experience.ExperienceSendResultActivity" />
+        <activity android:name=".ui.experience.ExperienceFormConfirmActivity" />
+        <activity android:name=".ui.experience.ExperienceFormThirdActivity" />
         <activity android:name=".ui.experience.ExperienceFormSecondActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsSendConfirmActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsSendResultActivity" />
         <activity android:name=".ui.DatabaseManagementActivity" />
         <activity android:name=".ui.AppManagementActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsConfirmActivity" />
@@ -28,6 +55,7 @@
         <activity android:name=".ui.dailyreports.DailyReportsFormThirdActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsFormSecondActivity" />
         <activity android:name=".ui.dailyreports.DailyReportsFormFirstActivity" />
+        <activity android:name=".ui.dailyreports.DailyReportsFixActivity" />
         <activity android:name=".ui.experience.ExperienceFormFirstActivity" />
         <activity android:name=".StaffActivity" />
         <activity android:name=".ui.requestdocuments.RequestDocumentsRecordDeleteResultActivity" />

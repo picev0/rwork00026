@@ -12,16 +12,20 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 class GoogleAuthController(private val activity: AppCompatActivity) {
+
+    // FirebaseAuthの生成
     private val firebaseAuth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
 
+    // GoogleSignInClient のオプション、今回は特に設定が必要ないのでデフォルト値的なものを利用する
     private val googleSignInOptions: GoogleSignInOptions by lazy {
         val signInOption = GoogleSignInOptions.DEFAULT_SIGN_IN
         val idToken = activity.getString(R.string.default_web_client_id)
         GoogleSignInOptions.Builder(signInOption).requestIdToken(idToken).requestEmail().build()
     }
 
+    // GoogleSignInClientの生成
     private val googleSignInClient: GoogleSignInClient by lazy {
         GoogleSignIn.getClient(activity, googleSignInOptions)
     }
@@ -30,8 +34,10 @@ class GoogleAuthController(private val activity: AppCompatActivity) {
 
     val currentUser: FirebaseUser? get() = firebaseAuth.currentUser
 
+
     fun startSignIn(completed: (FirebaseUser) -> (Unit)) {
         this.completed = completed
+        //アカウントの選択
         val signInIntent = googleSignInClient.signInIntent
         activity.startActivityForResult(signInIntent, RC_SIGN_IN)
     }

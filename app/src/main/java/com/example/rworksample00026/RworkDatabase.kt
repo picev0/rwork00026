@@ -27,11 +27,11 @@ abstract class RworkDatabase : RoomDatabase() {
 
             if (db == null) {
                 if (TEST_MODE) {
-                    db = Room.inMemoryDatabaseBuilder(context, RworkDatabase::class.java).openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("hworldrwork".toCharArray()))).allowMainThreadQueries().build()
+                    db = Room.inMemoryDatabaseBuilder(context, RworkDatabase::class.java).openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("test".toCharArray()))).allowMainThreadQueries().build()
 
                 }
                 else {
-                    db = Room.databaseBuilder(context, RworkDatabase::class.java, "rwork.db").openHelperFactory(SupportFactory(SQLiteDatabase.getBytes("hworldrwork".toCharArray()))).allowMainThreadQueries().build()
+                    db = Room.databaseBuilder(context, RworkDatabase::class.java, "rwork.db").openHelperFactory(SupportFactory(SQLiteDatabase.getBytes(BuildConfig.PASSWORD.toCharArray()))).allowMainThreadQueries().build()
                 }
             }
 

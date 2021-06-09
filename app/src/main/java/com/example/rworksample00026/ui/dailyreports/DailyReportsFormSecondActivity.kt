@@ -70,8 +70,9 @@ class DailyReportsFormSecondActivity : ScopedAppActivity() {
 
         launch (Dispatchers.IO){
             val userData = userViewModel.emailList
+            val userCount = userViewModel.emailList.count() - 1
             launch (Dispatchers.Main){
-                binding.name.text = userData.map{ it.name }[0].toString()
+                binding.name.text = userData.map{ it.name }[userCount].toString()
 
             }
         }

@@ -3,10 +3,8 @@ package com.example.rworksample00026.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
-import com.example.rworksample00026.R
 import com.example.rworksample00026.databinding.ActivityAuthBinding
 import com.example.rworksample00026.ui.util.GoogleAuthController
 import kotlinx.coroutines.CoroutineScope
@@ -36,13 +34,8 @@ class AuthActivity : AppCompatActivity() {
                         val email = it.email
                         val name = it.displayName
                         withContext(Dispatchers.Main){
-                            Log.d("[email]", email)
-                            Log.d("[name]", name)
                             binding.userIdTextView.text = email
                             binding.userNameTextView.text = name
-                            coroutineScope.launch (Dispatchers.Default){
-                                viewModel.insert(name, email)
-                            }
                         }
                     }
                 }
@@ -61,7 +54,8 @@ class AuthActivity : AppCompatActivity() {
             override fun onClick(v: View?) {
                 coroutineScope.launch {
                     withContext(Dispatchers.Default){
-                        //viewModel.insert(binding.userNameTextView.text.toString(), binding.userIdTextView.text.toString())
+                        viewModel.insert(binding.userNameTextView.text.toString(), binding.userIdTextView.text.toString())
+
                     }
                 }
                 val intent = Intent(this@AuthActivity, AttendantActivity::class.java)
@@ -75,8 +69,7 @@ class AuthActivity : AppCompatActivity() {
                 val email = currentUser.email
                 val name = currentUser.displayName
                 withContext(Dispatchers.Main){
-                    Log.d("[email]", email.toString())
-                    Log.d("[name]", name.toString())
+
                     binding.userIdTextView.text = email
                     binding.userNameTextView.text = name
                 }

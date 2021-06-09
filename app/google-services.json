@@ -133,6 +133,14 @@
           }
         },
         {
+          "client_id": "892567543320-pbtk0kt4ffl17e7b1ceta05lprchjkfu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rworksample00026",
+            "certificate_hash": "d17f47960d157afe80c8ab7ec3b99d6334e2a036"
+          }
+        },
+        {
           "client_id": "892567543320-8ivbp9rb43hglpette64f0bi34oirspp.apps.googleusercontent.com",
           "client_type": 3
         }

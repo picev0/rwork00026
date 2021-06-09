@@ -24,24 +24,26 @@ class DailyReportsAdminActivity : AppCompatActivity() {
 
             binding.backBtn.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
-                    if (intent.getStringExtra("DB").equals("DB管理")) {
+                    val pageJudge1 = intent.getStringExtra("reports")
+                    val pageJudge2 = intent.getStringExtra("DB")
+                    if (pageJudge2 != null) {
                         val intent = Intent(
                             this@DailyReportsAdminActivity,
                             DatabaseManagementActivity::class.java
                         )
                         startActivity(intent)
                     }
-                }
-            })
-
-
-
-            binding.backBtn.setOnClickListener (object : View.OnClickListener{
-                override fun onClick(v: View?) {
-                    if (intent.getStringExtra("reports").equals("reports")) {
+                    if (pageJudge1 != null ) {
                         val intent = Intent(this@DailyReportsAdminActivity, DailyReportsFormFirstActivity::class.java)
                         startActivity(intent)
                     }
+                }
+            })
+
+            binding.deleteBtn.setOnClickListener(object: View.OnClickListener{
+                override fun onClick(v: View?) {
+                    val intent = Intent(this@DailyReportsAdminActivity, DailyReportsRecordDeleteConfirmActivity::class.java)
+                    startActivity(intent)
                 }
             })
 

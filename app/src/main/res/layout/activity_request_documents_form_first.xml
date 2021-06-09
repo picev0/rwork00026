@@ -4,13 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.requestdocuments.RequestDocumentsFormFirstActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#0059FF"
+        android:id="@+id/tool_bar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
     <TextView
+        android:layout_marginTop="50dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
         android:textSize="30sp"
         android:text="資料請求1/3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,11 +38,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:text="送信するまで戻るボタン、ホームボタンを押したり、\nアプリを閉じたりしないでください"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.15"/>
@@ -32,9 +52,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/name"
         android:inputType="text"
-        android:layout_marginTop="80dp"
         android:hint="お名前"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -42,14 +61,15 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/phoneticGuides"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="0dp"
         android:inputType="text"
         android:hint="ふりがな"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/tvDateTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="日付入力ボタンで表示される\nカレンダーにはボタンがありません。\n右下のところをタップしてください"
@@ -64,7 +84,7 @@
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:text="生年月日"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,12 +98,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateTheme"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.5"/>
 
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        app:bootstrapSize="lg"
+        app:roundedCorners="true"
+        app:bootstrapBrand="primary"
         android:id="@+id/datePickerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,7 +140,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        app:bootstrapBrand="primary"
+        app:roundedCorners="true"
+        app:bootstrapSize="lg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/nextPageBtn"
@@ -130,7 +155,10 @@
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintVertical_bias="0.95" />
 
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        app:bootstrapSize="lg"
+        app:roundedCorners="true"
+        app:bootstrapBrand="primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/adminPageBtn"

@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    tools:context=".ui.dailyreports.DailyReportsFormFirstActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#dfe"
+        tools:context=".ui.dailyreports.DailyReportsFormFirstActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#28A745"
+        android:id="@+id/tool_bar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
 
 
         <TextView
@@ -17,6 +33,7 @@
             android:text="日報報告書1/3"
             android:textSize="30sp"
             android:id="@+id/tvTheme"
+            android:layout_marginTop="60dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -42,7 +59,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title"/>
 
-        <Button
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -125,7 +145,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.8"/>
 
-        <Button
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            app:bootstrapSize="lg"
+            app:roundedCorners="true"
+            app:bootstrapBrand="success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/timeBeforeButton"
@@ -135,7 +158,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTimeAfter"
             app:layout_constraintHorizontal_bias="0.2"/>
-        <Button
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/timeAfterButton"
@@ -146,10 +172,14 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTimeAfter"
             app:layout_constraintHorizontal_bias="0.8"/>
 
-        <Button
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            app:bootstrapSize="lg"
+            app:roundedCorners="true"
+            app:bootstrapBrand="success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nextPageBtn"
+            android:layout_marginTop="10dp"
             android:text="次へ"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +187,11 @@
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintVertical_bias="0.9"/>
 
-        <Button
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sentMailListBtn"
@@ -168,11 +202,15 @@
             app:layout_constraintHorizontal_bias="0.55"
             app:layout_constraintVertical_bias="0.9"/>
 
-        <Button
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            app:bootstrapSize="lg"
+            app:roundedCorners="true"
+            app:bootstrapBrand="success"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/adminPageBtn"
-            android:text="管理者の方"
+            android:text="管理者"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/timeAfterButton"
@@ -187,4 +225,3 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>

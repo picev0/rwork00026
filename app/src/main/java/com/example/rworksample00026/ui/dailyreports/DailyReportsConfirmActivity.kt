@@ -1,7 +1,9 @@
 package com.example.rworksample00026.ui.dailyreports
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import com.example.rworksample00026.R
 import com.example.rworksample00026.databinding.ActivityDailyReportsConfirmBinding
@@ -29,6 +31,7 @@ class DailyReportsConfirmActivity : ScopedAppActivity() {
             str.append("\n")
             str.append("週間目標：　")
             str.append(list.map{it.weeklyGoal}[i].toString())
+            str.append("\n")
             str.append("-----------------------")
             str.append("\n")
             str.append("本日の報告内容【作業面】")
@@ -75,5 +78,19 @@ class DailyReportsConfirmActivity : ScopedAppActivity() {
             str.append("\n")
         }
         binding.textView.text = str.toString()
+
+        binding.submitConfirm.setOnClickListener (object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                val intent = Intent(this@DailyReportsConfirmActivity, DailyReportsSendConfirmActivity::class.java)
+                startActivity(intent)
+            }
+        })
+
+        binding.fixBtn.setOnClickListener (object :View.OnClickListener{
+            override fun onClick(v: View?) {
+                val intent = Intent(this@DailyReportsConfirmActivity, DailyReportsFixActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 }

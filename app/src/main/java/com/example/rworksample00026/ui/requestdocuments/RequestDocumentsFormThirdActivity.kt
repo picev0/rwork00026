@@ -51,8 +51,8 @@ class RequestDocumentsFormThirdActivity : ScopedAppActivity() {
 
         val spinnerDis = binding.spinnerDisableCertificate
         val spinnerSnd = binding.spinnerSendingMaterials
-        val ansDis = binding.tvDisableCertificate
-        val ansSnd = binding.tvSendingMaterials
+        val ansDis = binding.tvDisableCertificateAnswer
+        val ansSnd = binding.tvSendingMaterialsAnswer
 
         adapterDis.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapterSnd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

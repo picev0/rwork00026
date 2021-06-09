@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">ハローワールド</string>
+    <string name="app_name">ニューロリワーク</string>
+    <string name="theme">ニューロリワーク</string>
+    <string name="first">体調と希望に合わせて段階的に\n進めていくリワークプログラム</string>
+    <string name="second">科学的根拠のある独自の「ブレイン\nフィットネスプログラム」で生活習\n慣をしっかり整える\n精神科医・脳科学者監修</string>
+    <string name="third">働いてからも安心して働きつづけら\nれる定着支援サポートも</string>
     <string name="privacypolicystmt">入力された個人情報は、プライバシーポリシーに基づき取り扱われます。\nプライバシーポリシーをご確認いただき、同意の上で「次へ」ボタンをタップしてください。</string>
 </resources>

@@ -67,12 +67,12 @@ class CatchtheBallActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         soundPlayer = SoundPlayer(this)
-        scoreLabel = findViewById(R.id.scoreLabel)
-        startLabel = findViewById(R.id.startLabel)
-        circle = findViewById(R.id.circle)
-        orange = findViewById(R.id.orange)
-        pink = findViewById(R.id.pink)
-        yellow = findViewById(R.id.yellow)
+        scoreLabel = binding.scoreLabel
+        startLabel = binding.startLabel
+        circle = binding.circle
+        orange = binding.orange
+        pink = binding.pink
+        yellow = binding.yellow
 
         // Screen Size
         val wm = windowManager

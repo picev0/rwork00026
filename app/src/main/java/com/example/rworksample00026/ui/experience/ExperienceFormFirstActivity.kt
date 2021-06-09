@@ -1,6 +1,7 @@
 package com.example.rworksample00026.ui.experience
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -64,6 +65,8 @@ class ExperienceFormFirstActivity : ScopedAppActivity(), DatePickerDialog.OnDate
                 val check = validationCheck(binding.name, binding.phoneNumber)
                 if (check) {
                     launch { withContext(Dispatchers.Default) { viewModel.insert(binding.answerApplicationForm.text.toString(), binding.name.text.toString(), binding.phoneticGuides.text.toString(), binding.birthday.text.toString(), binding.phoneNumber.text.toString())}}
+                    val intent = Intent(this@ExperienceFormFirstActivity, ExperienceFormSecondActivity::class.java)
+                    startActivity(intent)
                 }
             }
         })

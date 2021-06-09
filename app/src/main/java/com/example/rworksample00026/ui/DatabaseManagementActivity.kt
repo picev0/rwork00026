@@ -8,6 +8,7 @@ import com.example.rworksample00026.R
 import com.example.rworksample00026.StaffActivity
 import com.example.rworksample00026.databinding.ActivityDatabaseManagementBinding
 import com.example.rworksample00026.ui.dailyreports.DailyReportsAdminActivity
+import com.example.rworksample00026.ui.experience.ExperienceRecordDeleteConfirmActivity
 import com.example.rworksample00026.ui.requestdocuments.RequestDocumentsAdminActivity
 
 class DatabaseManagementActivity : AppCompatActivity() {
@@ -29,14 +30,15 @@ class DatabaseManagementActivity : AppCompatActivity() {
 
         binding.trialDatabaseManagement.setOnClickListener (object : View.OnClickListener{
             override fun onClick(v: View?) {
-                val intent = Intent()
+                val intent = Intent(this@DatabaseManagementActivity, ExperienceRecordDeleteConfirmActivity::class.java)
+                startActivity(intent)
             }
         })
 
         binding.userDatabaseManagement.setOnClickListener (object : View.OnClickListener{
             override fun onClick(v: View?) {
                 val intent = Intent(this@DatabaseManagementActivity, UserDatabaseAdminActivity::class.java)
-                intent.putExtra("DB", "DB管理")
+                intent.putExtra("DB", "DBManagement")
                 startActivity(intent)
             }
         })
@@ -44,7 +46,7 @@ class DatabaseManagementActivity : AppCompatActivity() {
         binding.dailyReportDatabaseManagement.setOnClickListener (object: View.OnClickListener{
             override fun onClick(v: View?) {
                 val intent = Intent(this@DatabaseManagementActivity, DailyReportsAdminActivity::class.java)
-                intent.putExtra("DB", "DB管理")
+                intent.putExtra("DB", "DBManagement")
                 startActivity(intent)
             }
         })

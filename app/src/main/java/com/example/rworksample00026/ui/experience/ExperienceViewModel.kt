@@ -5,9 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rworksample00026.RworkDatabase
 import com.example.rworksample00026.model.dao.ExperiencePersonInfoDao
-import com.example.rworksample00026.model.dao.RequestDocumentsPersonInfoDao
 import com.example.rworksample00026.model.entity.ExperiencePersonInfo
-import com.example.rworksample00026.model.entity.RequestDocumentsPersonInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -33,8 +31,8 @@ class ExperienceViewModel(application: Application): AndroidViewModel(applicatio
             experiencePersonInfoDao.saveExperiencePersonInfo(
                 ExperiencePersonInfo(
                     id = 0,
-                    name = name,
                     applicationForm = applicationForm,
+                    name = name,
                     phoneticGuides = phoneticGuides,
                     birthday = birthday,
                     mailAddress = "",
@@ -76,12 +74,19 @@ class ExperienceViewModel(application: Application): AndroidViewModel(applicatio
         }
     }
 
-    fun updateParam(disableCertificate: String, desiredDateFirstCandidate: String, desiredDateSecondCandidate: String, desiredDateThirdCandidate: String, remarks: String) {
+    fun updateParamFirst(disableCertificate: String, desiredDateFirstCandidate: String, desiredDateSecondCandidate: String) {
         viewModelScope.launch (Dispatchers.Unconfined) {
             val editPersonInfo = personData.first()
             editPersonInfo.disableCertifidate = disableCertificate
             editPersonInfo.desiredDateFirstCandidate = desiredDateFirstCandidate
             editPersonInfo.desiredDateSecondCandidate = desiredDateSecondCandidate
+            experiencePersonInfoDao.updateExperiencePersonInfo(editPersonInfo)
+        }
+    }
+
+    fun updateParamSecond(desiredDateThirdCandidate: String, remarks: String) {
+        viewModelScope.launch (Dispatchers.Unconfined) {
+            val editPersonInfo = personData.first()
             editPersonInfo.desiredDateThirdCandidate = desiredDateThirdCandidate
             editPersonInfo.remarks = remarks
             experiencePersonInfoDao.updateExperiencePersonInfo(editPersonInfo)

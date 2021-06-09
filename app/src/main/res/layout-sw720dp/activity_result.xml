@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.beginner.ResultActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GAME OVER"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/scoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150"
+        android:textSize="40sp"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/highScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High Score : 300"
+        android:textSize="20sp"
+        android:layout_marginTop="80dp"/>
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        app:bootstrapBrand="warning"
+        app:bootstrapSize="lg"
+        app:roundedCorners="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="もう一度プレイ"
+        android:layout_marginTop="50dp"
+        android:onClick="tryAgain"/>
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        app:roundedCorners="true"
+        app:bootstrapBrand="warning"
+        app:bootstrapSize="lg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="戻る"
+        android:layout_marginTop="20dp"
+        android:onClick="menu"/>
+
+</LinearLayout>

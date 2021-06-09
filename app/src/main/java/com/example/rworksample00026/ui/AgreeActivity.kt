@@ -20,7 +20,7 @@ class AgreeActivity : AppCompatActivity() {
 
         binding.gotobrowse.setOnClickListener (object : View.OnClickListener {
             override fun onClick(v: View?) {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://hworld-rework.com/privacy"))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://include-inc.co.jp/privacy/"))
                 startActivity(intent)
             }
         })

@@ -23,19 +23,19 @@ class DailyReportsViewModel(application: Application) : AndroidViewModel(applica
 
     //val lastData = reportsData.last()
 
-    fun insertReportParam(title: String, weeklyGoal: String, participationProgram: String, detailsOfEfforts: String){
+    fun insertReportParam(title: String, weeklyGoal: String, date: String, commutingTimeBefore: String, commutingTimeAfter: String){
         viewModelScope.launch (Dispatchers.IO){
             reportsDao.saveReports(
                 DailyReports(
                     id = 0,
                     title = title,
                     name ="",
-                    date = "",
+                    date = date,
                     weeklyGoal = weeklyGoal,
-                    commutingTimeBefore = "",
-                    commutingTimeAfter = "",
-                    participationProgram = participationProgram,
-                    detailsOfEfforts = detailsOfEfforts,
+                    commutingTimeBefore = commutingTimeBefore,
+                    commutingTimeAfter = commutingTimeAfter,
+                    participationProgram = "",
+                    detailsOfEfforts = "",
                     impressions = "",
                     meal = "",
                     sleep = "",
